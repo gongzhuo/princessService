@@ -58,9 +58,9 @@ public class PrincessSvcRoaResource {
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   public String query(@Context HttpServletRequest req, @Context HttpServletResponse resp,
-      @PathParam("studentid") String studentid) throws SQLException {
-    LOGGER.info("query student, name = " + studentid);
-    List<Student> result = new AccessDbRawWay().getStudentByName(studentid);
+      @PathParam("studentid") String name) throws SQLException {
+    LOGGER.info("query student, name = " + name);
+    List<Student> result = new AccessDbRawWay().getStudentByName(name);
     return JsonUtil.toJson(result);
 
   }
